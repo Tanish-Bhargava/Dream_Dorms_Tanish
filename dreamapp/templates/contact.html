@@ -1,0 +1,77 @@
+{% extends 'list.html' %}
+{% block login %}
+{% load static %}
+<style>
+    /* Style for the image when hovered */
+    img:hover {
+        opacity: 0.8; /* Reduce opacity when hovered */
+        cursor: pointer; /* Change cursor to pointer */
+        transform: scale(1.05); /* Scale the image slightly when hovered */
+        transition: transform 0.3s; /* Add a smooth transition effect */
+    }
+
+    /* Style for the first image */
+    .image1 {
+        position: absolute; /* Position the image absolutely */
+        top: 180px; /* Distance from the top */
+        left: 250px; /* Distance from the left */
+    }
+
+    .image2 {
+        position: absolute; /* Position the image absolutely */
+        top: 190px; /* Distance from the top */
+        left: 580px; /* Distance from the left */
+    }
+    .image3 {
+        position: absolute; /* Position the image absolutely */
+        top: 180px; /* Distance from the top */
+        left: 850px; /* Distance from the left */
+    }
+    .image-text {
+        position: absolute; /* Position the text absolutely */
+        bottom: -40px; /* Distance from the bottom of the image */
+        left: 50%; /* Align the text to the center */
+        transform: translateX(-50%); /* Center the text horizontally */
+        color: Black; /* Text color */
+        padding: 5px 10px; /* Padding around the text */
+        font-size: 14px; /* Font size */
+    }
+
+</style> 
+<hr>
+<body>
+    <br>
+    <center>
+        <h1>How can we help?</h1>
+    </center>
+    <br>
+    <br>
+    <a href="{% url 'booking' %}" class="image1">
+        <img src="{% static 'img/con1.png' %}" alt="Image">
+        <div class="image-text"><h1>BOOKING </h1></div>
+    </a>
+    <a href="mailto:Support.Dreamdorms@gmail.com" class="image2">
+        <img src="{% static 'img/con2.png' %}" alt="Image">
+        <div class="image-text"><h1>EMAIL</h1></div>
+    </a>
+    <a href="tel:1234567890" class="image3">
+        <img src="{% static 'img/con4.png' %}" alt="Image">
+        <div class="image-text"><h1>HELPLINE</h1></div>
+    </a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+{% endblock %}

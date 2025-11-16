@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Login Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .user {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .label {
+            font-weight: bold;
+        }
+        .value {
+            margin-left: 10px;
+        }
+        .ordinal {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Login Details</h1>
+        {% for login in loginlist %}
+        <div class="user">
+            <div class="ordinal">{{ forloop.counter }})</div>
+            <div class="label">Username:</div>
+            <div class="value">{{ login.username }}</div>
+            <div class="label">Email:</div>
+            <div class="value">{{ login.email }}</div>
+            <div class="label">Password:</div>
+            <div class="value">{{ login.password }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

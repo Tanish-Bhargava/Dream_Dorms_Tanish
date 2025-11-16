@@ -1,0 +1,202 @@
+
+{% extends 'list.html' %}
+{% block login %}
+{% load static %}
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #F8F4F4; /* Use your desired color value */
+}
+
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+/****************
+      FORM
+*****************/
+.signup {
+  background-color: white;
+  width: 100%;
+  max-width: 500px;
+  padding: 50px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-radius: 20px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+  text-align: center;
+  color: Black;
+}
+h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: lighter;
+
+  margin-bottom: 40px;
+}
+
+h2 span {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #a4243b;
+}
+
+/*  Field */
+.signup__field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.signup__field:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 0px;
+  height: 2px;
+  background: #FC5C3C;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.4s ease;
+}
+
+.signup__field:hover:before {
+  width: 100%;
+}
+
+/*  Input */
+.signup__input {
+  width: 100%;
+  height: 100%;
+  font-size: 1.2rem;
+  padding: 10px 2px 0;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/*  Label */
+.signup__label {
+  color: #bdbdbd;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.signup__input:focus + .signup__label,
+.signup__input:valid + .signup__label {
+  top: 0;
+  font-size: 1rem;
+  background-color: white;
+}
+
+    /*  Button */
+    #rags {
+        display: flex;
+        align-items: center; /* Center the text vertically */
+        justify-content: center; /* Center the text horizontally */
+        background: #FC5C3C;
+        color: white;
+        padding: 12px 0;
+        font-size: 1.2rem;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+      
+    
+    #rags:hover {
+      background: red;
+    }
+    #notification{
+      color:Green;
+    }
+  </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+
+    <body>
+        <br>
+        <br>
+        <center>
+          
+            <form action="{% url 'login'%}" class="signup" method="POST">
+                <div id="notification" style="display: none;">Logged in successfully!<br>Redirecting to Home page</div>
+                <h1>Create account</h1>
+                <h2>Already have an account? <a href={% url 'Home' %}><span>Sign in</span></a></h2>
+                {% csrf_token %}
+            
+                <div class="signup__field">
+                    <input class="signup__input" type="text" name="username" id="username" required />
+                    <label class="signup__label" for="username">Username</label>
+                </div>
+            
+                <div class="signup__field">
+                    <input class="signup__input" type="text" name="email" id="email" required />
+                    <label class="signup__label" for="email">Email</label>
+                </div>
+            
+                <div class="signup__field">
+                    <input class="signup__input" type="password" name="password" id="password" required />
+                    <label class="signup__label" for="password">Password</label>
+                </div>
+            
+                <button type="submit" id="rags">Sign up</button>
+                <input type="hidden" name="login_time" id="login_time" value="" />
+
+            </form>
+            
+        </center>
+
+        <br>
+        <br>
+
+        </body>
+      <script>
+        document.querySelector('form.signup').addEventListener('submit', function(event) {
+          // Prevent the form from submitting
+          event.preventDefault();
+      
+          // Submit the form data using fetch or another method
+          fetch(this.action, {
+              method: this.method,
+              body: new FormData(this),
+              headers: {
+                  'X-CSRFToken': '{{ csrf_token }}'
+              }
+          }).then(response => {
+              // Handle the response and display the notification message
+              document.getElementById('notification').style.display = 'block';
+              setTimeout(function() {
+                  window.location.href = "{% url 'Home' %}";
+              }, 2000); // Redirect after 2 seconds
+          }).catch(error => {
+              console.error('Error:', error);
+          });
+      });
+      
+    </script>
+</html>
+          
+
+{% endblock %}

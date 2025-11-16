@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+<style> 
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .property-box {
+            display: flex;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .property-image {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .property-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .property-info {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .property-info h2 {
+            margin-top: 0;
+        }
+
+        .property-info p {
+            margin: 10px 0;
+        }
+
+        .property-info button {
+            padding: 5px 10px;
+            background-color: #FC5C3C;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .property-info button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<center>
+    {% if searched %}
+    <br>
+    <h1> You are searching for {{ searched }} </h1>
+    <br>
+</center>
+{% if searchman %}
+{% for venue in searchman %}
+<div class="property-box">
+    <div class="property-image">
+        <img src="{{ venue.image.url }}" alt="Property Image">
+
+    </div>
+    <div class="property-info">
+        <h2>{{venue.property_name}}</h2>
+        <p>area: {{venue.area_name}}</p>
+        <p>Location: {{venue.Location}}</p>
+        <p>Distance: Distance from symbiosis {{venue.distance}}</p>
+        <p>Aminites: we provide following Aminites {{venue.Aminites}}</p>
+        <p>Dream code: {{venue.code}}</p>
+        <p>contact: {{venue.phone1}} / {{venue.phone2}}</p>
+        <p>Price: ₹{{venue.price}}/month</p>
+        <p>{{venue.prop_description}}</p>
+        <button class="bookButton">Book now</button>
+    </div>
+</div>
+
+
+<br>
+
+{% endfor %}
+{% else %}
+<center>
+    <br>
+    <br>
+    <h3>No results found</h3>
+</center>
+{% endif %}
+{% else %}
+<center>
+    <br>
+    <h1> You didn't search for anything </h1>
+    <br>
+    <br>
+    <p>-x-xx-xxx-xxxx-xxx-xx-x-</p>
+    {{ searched }}
+</center>
+{% endif %}
+<script>
+    document.addEventListener("click", function(event) {
+        if (event.target.classList.contains("bookButton")) {
+            window.location.href = "{% url 'booking' %}";
+        }
+    });
+</script>
+
+{% endblock %}
