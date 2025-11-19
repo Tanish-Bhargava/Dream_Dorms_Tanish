@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DreamDorms - Find your dream house</title>
+
+
+
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+    <style> 
+        body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+    
+            .property-box {
+                display: flex;
+                border: 1px solid #ccc;
+                margin-bottom: 20px;
+            }
+    
+            .property-image {
+                flex: 1;
+                padding: 20px;
+            }
+    
+            .property-image img {
+                width: 100%;
+                height: auto;
+            }
+    
+            .property-info {
+                flex: 2;
+                padding: 20px;
+            }
+    
+            .property-info h2 {
+                margin-top: 0;
+            }
+    
+            .property-info p {
+                margin: 10px 0;
+            }
+    
+            .property-info button {
+                padding: 5px 10px;
+                background-color: #FC5C3C;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+    
+            .property-info button:hover {
+                background-color: #0056b3;
+            }
+
+            .navbar-link {
+                font-weight: normal !important;
+              }
+    
+        </style>
+
+</head>
+<body>
+
+  
+    <header class="header" data-header>
+  
+  
+      <div class="header-bottom">
+        <div class="container">
+  
+          <a href="{% url 'Home' %}" class="logo">
+            <img src="{% static 'img/ora3.png' %}" alt="logo">
+          </a>
+  
+          <nav class="navbar" data-navbar>
+  
+            <div class="navbar-top">
+  
+              <a href="#" class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="logo">
+              </a>
+  
+              <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+  
+            </div>
+  
+            <div class="navbar-bottom">
+              <ul class="navbar-list">
+  
+                <li>
+                  <a href={% url 'Home' %} class="navbar-link" data-nav-link>Home</a>
+                </li>
+                <li>
+                  <a href="{% url 'list'%}" class="navbar-link" data-nav-link>More Properties</a>
+                </li>
+                <li>
+                  <a href="{% url 'contact'%}" class="navbar-link" data-nav-link>Contact</a>
+                </li>
+  
+              </ul>
+            </div>
+  
+          </nav>
+          <div class="header-bottom-actions">
+  
+            <button id="searchButton" class="header-bottom-actions-btn" aria-label="Search">
+              <ion-icon name="search-outline"></ion-icon>
+  
+              <span>Search</span>
+            </button>
+  
+            <button class="header-bottom-actions-btn" aria-label="Profile" id="profileBtn">
+              <ion-icon name="person-outline"></ion-icon>
+              <span>Profile</span>
+            </button>
+  
+            <button class="header-bottom-actions-btn" aria-label="Cart" id="bookingButton">
+              <ion-icon name="cart-outline"></ion-icon>
+              <span>Cart</span>
+            </button>
+          
+  
+            <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+              <ion-icon name="menu-outline"></ion-icon>
+  
+              <span>Menu</span>
+            </button>
+  
+          </div>
+  
+        </div>
+      </div>
+  
+    </header>
+    {% block login %}
+    {% endblock %}
+    <body>
+        {% for event in eventlist %}
+        <div class="property-box">
+            <div class="property-image">
+                <img src="{{ event.image.url }}" alt="Property Image">
+        
+            </div>
+            <div class="property-info">
+                <h2>{{event.property_name}}</h2>
+                <p>area: {{event.area_name}}</p>
+                <p>Location: {{event.Location}}</p>
+                <p>Distance: Distance from symbiosis {{event.distance}}</p>
+                <p>Aminites: we provide following Aminites {{event.Aminites}}</p>
+                <p>Dream code: {{event.code}}</p>
+                <p>contact: {{event.phone1}} / {{event.phone2}}</p>
+                <p>Price: ₹{{event.price}}/month</p>
+                <p>{{event.prop_description}}</p>
+                <button id="bookButton">Book now</button>
+            </div>
+        </div>
+        {% endfor %}
+    </body>
+    <footer class="footer">
+
+      <div class="footer-top">
+        <div class="container">
+  
+          <div class="footer-brand">
+  
+            <a href="#" class="logo">
+              <img src="{% static 'img/ora3.png'%}" alt="logo">
+            </a>
+  
+            <p class="section-text">
+              MIT World Peace University (MIT-WPU), Survey No, 124, Paud Rd, Kothrud, Pune, Maharashtra 411038, India.
+  
+            <ul class="contact-list">
+  
+              <li>
+                <a href="#" class="contact-link">
+                  <ion-icon name="location-outline"></ion-icon>
+  
+                  <address>Kothrud, Pune</address>
+                </a>
+              </li>
+  
+              <li>
+                <a href="tel:+0123456789" class="contact-link">
+                  <ion-icon name="call-outline"></ion-icon>
+  
+                  <span>+91-7976499277</span>
+                </a>
+              </li>
+  
+              <li>
+                <a href="Support.DreamDorms@gmail.com" class="contact-link">
+                  <ion-icon name="mail-outline"></ion-icon>
+  
+                  <span>Support.DreamDorms@gmail.com</span>
+                </a>
+              </li>
+  
+            </ul>
+  
+            <ul class="social-list">
+  
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+  
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+  
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+  
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+              </li>
+  
+            </ul>
+  
+          </div>
+  
+          <div class="footer-link-box">
+  
+            <ul class="footer-list">
+  
+              <li>
+                <p class="footer-list-title">Company</p>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">About</a>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">Blog</a>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">All Products</a>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">Locations Map</a>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">FAQ</a>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">Contact us</a>
+              </li>
+  
+            </ul>
+  
+            <ul class="footer-list">
+  
+              <li>
+                <p class="footer-list-title">Services</p>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">Order tracking</a>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">Wish List</a>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">Login</a>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">My account</a>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">Terms & Conditions</a>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">Promotional Offers</a>
+              </li>
+  
+            </ul>
+  
+            <ul class="footer-list">
+  
+              <li>
+                <p class="footer-list-title">Customer Care</p>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">Login</a>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">My account</a>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">Wish List</a>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">Order tracking</a>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">FAQ</a>
+              </li>
+  
+              <li>
+                <a href="#" class="footer-link">Contact us</a>
+              </li>
+  
+            </ul>
+  
+          </div>
+  
+        </div>
+      </div>
+  
+  
+    </footer>
+  
+  
+  
+    
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>document.getElementById("searchButton").addEventListener("click", function() {
+    window.location.href = "{% url 'base' %}";
+  });
+</script>
+<script>
+  document.getElementById('profileBtn').addEventListener('click', function() {
+    window.location.href = "{% url 'login' %}";
+  });
+</script>
+
+<script>
+  document.getElementById('bookingButton').addEventListener('click', function() {
+    window.location.href = "{% url 'booking' %}";
+  });
+</script>
+<script>
+  document.getElementById("bookButton").addEventListener("click", function() {
+    window.location.href = "{% url 'booking' %}";
+  });
+</script>
+
+
+</html>
