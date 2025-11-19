@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DreamDorms - Find your dream house</title>
+
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- 
+      - HEADER
+    -->
+  
+    <header class="header" data-header>
+  
+      <div class="header-bottom">
+        <div class="container">
+  
+          <a href="#" class="logo">
+            <img src="{% static 'img/ora3.png' %}" alt="logo">
+          </a>
+  
+          <nav class="navbar" data-navbar>
+  
+            <div class="navbar-top">
+  
+              <a href="#" class="logo">
+                <img src="{% static 'img/loho1.png' %}" alt=" logo">
+              </a>
+  
+              <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+  
+            </div>
+  
+            <div class="navbar-bottom">
+              <ul class="navbar-list">
+  
+                <li>
+                  <a href="#home" class="navbar-link" data-nav-link>Home</a>
+                </li>
+  
+                <li>
+                  <a href="#about" class="navbar-link" data-nav-link>About</a>
+                </li>
+  
+                <li>
+                  <a href="#service" class="navbar-link" data-nav-link>Service</a>
+                </li>
+  
+                <li>
+                  <a href="#property" class="navbar-link" data-nav-link>Property</a>
+                </li>
+  
+                <li>
+                  <a href="{% url 'contact'%}" class="navbar-link" data-nav-link>Contact</a>
+                </li>
+  
+              </ul>
+            </div>
+  
+          </nav>
+  
+          <div class="header-bottom-actions">
+  
+            <button id="searchButton" class="header-bottom-actions-btn" aria-label="Search">
+              <ion-icon name="search-outline"></ion-icon>
+  
+              <span>Search</span>
+            </button>
+  
+            <button class="header-bottom-actions-btn" aria-label="Profile" id="profileBtn">
+              <ion-icon name="person-outline"></ion-icon>
+              <span>Profile</span>
+            </button>
+  
+            <button class="header-bottom-actions-btn" aria-label="Cart" id="bookingButton">
+              <ion-icon name="cart-outline"></ion-icon>
+              <span>Cart</span>
+            </button>
+            <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+              <ion-icon name="menu-outline"></ion-icon>
+              <span>Menu</span>
+            </button>
+
+  
+          </div>
+  
+        </div>
+      </div>
+  
+    </header>
+    <main>
+        <article>
+    
+            <!-- 
+            - #HERO
+          -->
+    
+            <section class="hero" id="home">
+                <div class="container">
+    
+                    <div class="hero-content">
+    
+                        <p class="hero-subtitle">
+                            <ion-icon name="home"></ion-icon>
+    
+                            <span>Accommodation Services</span>
+                        </p>
+    
+                        <h2 class="h1 hero-title">Find Your Dream House By Us</h2>
+    
+                        <p class="hero-text">
+                          Discover your ideal accommodation with Dream Dorms, where we offer specially curated flats and PGs, ensuring comfortable and convenient living for all.
+                        </p>
+    
+                        <button class="btn" id="enquiryButton">Make An Enquiry</button>
+    
+                    </div>
+    
+                    <figure class="hero-banner">
+                        <img src="{% static 'img/pngwing4.png' %}" alt="Modern house model" class="w-100">
+                    </figure>
+    
+                </div>
+            </section>
+        </article>
+    </main>
+    <!-- 
+- #ABOUT
+-->
+
+<section class="about" id="about">
+    <div class="container">
+
+        <figure class="about-banner">
+            <img src="{% static 'img/about-banner-1.png' %}" alt="House interior">
+
+            <img src="{% static 'img/about-banner-2.jpg' %}" alt="House interior" class="abs-img">
+        </figure>
+
+        <div class="about-content">
+
+            <p class="section-subtitle">About Us</p>
+
+            <h2 class="h2 section-title">Top-rated Housing Rental Platform.</h2>
+
+            <p class="about-text">
+                Over 39,000 people work for us in more than 70 countries all over the This breadth of global coverage,
+                combined with
+                specialist services
+            </p>
+
+            <ul class="about-list">
+
+                <li class="about-item">
+                    <div class="about-item-icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </div>
+
+                    <p class="about-item-text">Smart Home Design</p>
+                </li>
+
+                <li class="about-item">
+                    <div class="about-item-icon">
+                        <ion-icon name="leaf-outline"></ion-icon>
+                    </div>
+
+                    <p class="about-item-text">Beautiful Scene Around</p>
+                </li>
+
+                <li class="about-item">
+                    <div class="about-item-icon">
+                        <ion-icon name="wine-outline"></ion-icon>
+                    </div>
+
+                    <p class="about-item-text">Exceptional Lifestyle</p>
+                </li>
+
+                <li class="about-item">
+                    <div class="about-item-icon">
+                        <ion-icon name="shield-checkmark-outline"></ion-icon>
+                    </div>
+
+                    <p class="about-item-text">Complete 24/7 Security</p>
+                </li>
+
+            </ul>
+
+            <p class="callout">
+              "Discover Your Perfect Home and Experience Unmatched Comfort with Our Premier Accommodation Services!"
+            </p>
+
+            <a href="#service" class="btn">Our Services</a>
+
+        </div>
+
+    </div>
+</section>
+<!-- 
+- #SERVICE
+-->
+
+<section class="service" id="service">
+    <div class="container">
+
+        <p class="section-subtitle">Our Services</p>
+
+        <h2 class="h2 section-title">Our Main Focus</h2>
+
+        <ul class="service-list">
+
+            <li>
+                <div class="service-card">
+
+                    <div class="card-icon">
+                        <img src="{% static 'img/service-1.png' %}" alt="Service icon">
+                    </div>
+
+                    <h3 class="h3 card-title">
+                        <a href="#">Buy a home</a>
+                    </h3>
+
+                    <p class="card-text">
+                        over 1 million+ homes for sale available on the website, we can match you with a house you will want
+                        to call home.
+                    </p>
+
+                    <a href="#" class="card-link">
+                        <span>Find A Home</span>
+
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+
+                </div>
+            </li>
+
+            <li>
+                <div class="service-card">
+
+                    <div class="card-icon">
+                        <img src="{% static 'img/service-2.png' %}" alt="Service icon">
+                    </div>
+
+                    <h3 class="h3 card-title">
+                        <a href="#">Rent a home</a>
+                    </h3>
+
+                    <p class="card-text">
+                        over 1 million+ homes for sale available on the website, we can match you with a house you will want
+                        to call home.
+                    </p>
+
+                    <a href="#" class="card-link">
+                        <span>Find A Home</span>
+
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+
+                </div>
+            </li>
+
+            <li>
+                <div class="service-card">
+
+                    <div class="card-icon">
+                        <img src="{% static 'img/service-3.png' %}" alt="Service icon">
+                    </div>
+
+                    <h3 class="h3 card-title">
+                        <a href="#">Sell a home</a>
+                    </h3>
+
+                    <p class="card-text">
+                        over 1 million+ homes for sale available on the website, we can match you with a house you will want
+                        to call home.
+                    </p>
+
+                    <a href="#" class="card-link">
+                        <span>Find A Home</span>
+
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+</section>
+
+      <!-- 
+        - #PROPERTY
+      -->
+
+      <section class="property" id="property">
+        <div class="container">
+
+          <p class="section-subtitle">Properties</p>
+
+          <h2 class="h2 section-title">Featured Listings</h2>
+
+          <ul class="property-list has-scrollbar">
+
+            <li>
+              <div class="property-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="{% static 'img/double-room.webp' %}" alt="New Apartment Nice View" class="w-100">
+                  </a>
+
+                  <div class="card-badge green">For Rent</div>
+
+                  <div class="banner-actions">
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="location"></ion-icon>
+
+                      <address>Viman nagar, Pune</address>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="camera"></ion-icon>
+
+                      <span>4</span>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="film"></ion-icon>
+
+                      <span>2</span>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-price">
+                    <strong>₹15,000</strong>/Month
+                  </div>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Royal Residency</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Beautiful Huge 1 Family House near Airport. Newly Renovated With New Wood
+                  </p>
+
+                  <ul class="card-list">
+
+                    <li class="card-item">
+                      <strong>3</strong>
+
+                      <ion-icon name="bed-outline"></ion-icon>
+
+                      <span>Bedrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>2</strong>
+
+                      <ion-icon name="man-outline"></ion-icon>
+
+                      <span>Bathrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>3450</strong>
+
+                      <ion-icon name="square-outline"></ion-icon>
+
+                      <span>Square Ft</span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+               
+              </div>
+            </li>
+
+            <li>
+              <div class="property-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="{% static 'img/dorm-curtains.webp' %}" alt="Modern Apartments" class="w-100">
+                  </a>
+
+                  <div class="card-badge orange">For Sales</div>
+
+                  <div class="banner-actions">
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="location"></ion-icon>
+
+                      <address>Model Colony, pune</address>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="camera"></ion-icon>
+
+                      <span>4</span>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="film"></ion-icon>
+
+                      <span>2</span>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-price">
+                    <strong>₹9,000</strong>/Month
+                  </div>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Bhargava's P.G.</a>
+                  </h3>
+
+                  <p class="card-text">
+                    A student only dorms to make their studying life comfortable.
+                  </p>
+
+                  <ul class="card-list">
+
+                    <li class="card-item">
+                      <strong>4</strong>
+
+                      <ion-icon name="bed-outline"></ion-icon>
+
+                      <span>rooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>2</strong>
+
+                      <ion-icon name="man-outline"></ion-icon>
+
+                      <span>Sharing each</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>3450</strong>
+
+                      <ion-icon name="square-outline"></ion-icon>
+
+                      <span>Square Ft</span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+               
+              </div>
+            </li>
+
+            <li>
+              <div class="property-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="{% static 'img/image.webp' %}" alt="Comfortable Apartment" class="w-100">
+                  </a>
+
+                  <div class="card-badge green">For Selling</div>
+
+                  <div class="banner-actions">
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="location"></ion-icon>
+
+                      <address> Mumbai</address>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="camera"></ion-icon>
+
+                      <span>4</span>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="film"></ion-icon>
+
+                      <span>2</span>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-price">
+                    <strong>₹90,00,000</strong>
+                  </div>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Antilia Building</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Very luxuries house and very cheap.Buy now get 10% off.
+                  </p>
+
+                  <ul class="card-list">
+
+                    <li class="card-item">
+                      <strong>50</strong>
+
+                      <ion-icon name="bed-outline"></ion-icon>
+
+                      <span>Bedrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>80</strong>
+
+                      <ion-icon name="man-outline"></ion-icon>
+
+                      <span>Bathrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>93450</strong>
+
+                      <ion-icon name="square-outline"></ion-icon>
+
+                      <span>Square Ft</span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              
+
+              </div>
+            </li>
+
+            <li>
+              <div class="property-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="{% static 'img/3-bhk-flats-hadapsar.webp' %}" alt="Luxury villa in Rego Park" class="w-100">
+                  </a>
+
+                  <div class="card-badge green">For Rent</div>
+
+                  <div class="banner-actions">
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="location"></ion-icon>
+
+                      <address>Kumar World, hadapsar</address>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="camera"></ion-icon>
+
+                      <span>4</span>
+                    </button>
+
+                    <button class="banner-actions-btn">
+                      <ion-icon name="film"></ion-icon>
+
+                      <span>2</span>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-price">
+                    <strong>₹34,900</strong>/Month
+                  </div>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Kumar World</a>
+                  </h3>
+
+                  <p class="card-text">
+                    New made Luxury Apartments for famliy.no bachelors allowed.
+                  </p>
+
+                  <ul class="card-list">
+
+                    <li class="card-item">
+                      <strong>4</strong>
+
+                      <ion-icon name="bed-outline"></ion-icon>
+
+                      <span>Bedrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>2</strong>
+
+                      <ion-icon name="man-outline"></ion-icon>
+
+                      <span>Bathrooms</span>
+                    </li>
+
+                    <li class="card-item">
+                      <strong>3450</strong>
+
+                      <ion-icon name="square-outline"></ion-icon>
+
+                      <span>Square Ft</span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+      
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+    </section>
+
+         <!-- 
+        - #FEATURES
+      -->
+
+    <section class="features">
+        <div class="container">
+    
+            <p class="section-subtitle">Our Amenities</p>
+    
+            <h2 class="h2 section-title">Building Amenities</h2>
+    
+            <ul class="features-list">
+    
+                <li>
+                    <a href="#" class="features-card">
+    
+                        <div class="card-icon">
+                            <ion-icon name="car-sport-outline"></ion-icon>
+                        </div>
+    
+                        <h3 class="card-title">Parking Space</h3>
+    
+                        <div class="card-btn">
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </div>
+    
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="{% url 'swim'%}" class="features-card">
+    
+                        <div class="card-icon">
+                            <ion-icon name="water-outline"></ion-icon>
+                        </div>
+    
+                        <h3 class="card-title">Swimming Pool</h3>
+    
+                        <div class="card-btn">
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </div>
+    
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="#" class="features-card">
+    
+                        <div class="card-icon">
+                            <ion-icon name="shield-checkmark-outline"></ion-icon>
+                        </div>
+    
+                        <h3 class="card-title">Private Security</h3>
+    
+                        <div class="card-btn">
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </div>
+    
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="#" class="features-card">
+    
+                        <div class="card-icon">
+                            <ion-icon name="fitness-outline"></ion-icon>
+                        </div>
+    
+                        <h3 class="card-title">Medical Center</h3>
+    
+                        <div class="card-btn">
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </div>
+    
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="#" class="features-card">
+    
+                        <div class="card-icon">
+                            <ion-icon name="library-outline"></ion-icon>
+                        </div>
+    
+                        <h3 class="card-title">Library Area</h3>
+    
+                        <div class="card-btn">
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </div>
+    
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="#" class="features-card">
+    
+                        <div class="card-icon">
+                            <ion-icon name="bed-outline"></ion-icon>
+                        </div>
+    
+                        <h3 class="card-title">Double Spring Beds</h3>
+    
+                        <div class="card-btn">
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </div>
+    
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="#" class="features-card">
+    
+                        <div class="card-icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </div>
+    
+                        <h3 class="card-title">Laundry</h3>
+    
+                        <div class="card-btn">
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </div>
+    
+                    </a>
+                </li>
+    
+                <li>
+                    <a href="#" class="features-card">
+    
+                        <div class="card-icon">
+                            <ion-icon name="football-outline"></ion-icon>
+                        </div>
+    
+                        <h3 class="card-title">GYM</h3>
+    
+                        <div class="card-btn">
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </div>
+    
+                    </a>
+                </li>
+    
+            </ul>
+    
+        </div>
+    </section>
+
+    
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="cta">
+        <div class="container">
+
+          <div class="cta-card">
+            <div class="card-content">
+              <h2 class="h2 card-title">Looking for a dream home?</h2>
+
+              <p class="card-text">We can help you realize your dream of a new home</p>
+            </div>
+
+            <button id="exploreButton" class="btn cta-btn">
+              <span>Explore Properties</span>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="{% static 'img/ora3.png'%}" alt="logo">
+          </a>
+
+          <p class="section-text">
+            MIT World Peace University (MIT-WPU), Survey No, 124, Paud Rd, Kothrud, Pune, Maharashtra 411038, India.
+          </p>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="#" class="contact-link">
+                <ion-icon name="location-outline"></ion-icon>
+
+                <address>Kothrud, Pune</address>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+0123456789" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+
+                <span>+91-7976499277</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="Support.DreamDorms@gmail.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+
+                <span>Support.DreamDorms@gmail.com</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">About</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">All Products</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Locations Map</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Promotional Offers</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Customer Care</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Login</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">My account</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Wish List</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Order tracking</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">FAQ</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Contact us</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </footer>
+
+
+
+
+    
+
+
+
+    
+    <script src="{% static 'js/script.js' %}"></script>
+
+<!-- 
+  - ionicon link
+-->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>document.getElementById("searchButton").addEventListener("click", function() {
+    window.location.href = "{% url 'base' %}";
+  });
+</script>
+<script>
+  document.getElementById("exploreButton").addEventListener("click", function() {
+    window.location.href = "{% url 'base' %}";
+  });
+</script>
+<script>
+  document.getElementById('profileBtn').addEventListener('click', function() {
+    window.location.href = "{% url 'login' %}";
+  });
+</script>
+<script>
+  document.getElementById('enquiryButton').addEventListener('click', function() {
+      window.location.href = "{% url 'contact' %}";
+  });
+</script>
+<script>
+document.getElementById('bookingButton').addEventListener('click', function() {
+  window.location.href = "{% url 'booking' %}";
+});
+</script>
+
+</html>
+  
